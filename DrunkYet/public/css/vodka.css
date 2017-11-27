@@ -1,117 +1,149 @@
+/*Vodka.css version 0.2*/
+
+:root{
+    --top-color:#f1c40f;
+    --bottom-color:#e67e22;
+    --strong-color:white;
+    --main-color: var(--strong-color);
+    --secondary-color : var(--top-color);
+}
 html, body {
-  margin:0;
-  padding: 0;
-}
-body{
-  background-image: linear-gradient(0, red, orange);
-  width:100%;
-  height:100%;
-}
-.content{
-  width: 100%;
-  height:100%;
-  margin: auto;
-  font-size: 10px;
-}
-
-.content > *{
-    font-size: 2rem;
-    margin: auto;
-    width:90%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    background: linear-gradient(#ffcc00 0%, #ff7700 100%);
     color:white;
-    font-family: Arial;
+    font-size: 20px;
 }
 
-.button, input, select, .radio-group label{
-  font-size: 2rem;
-  line-height: 2.5rem;
-  height:2.5rem;
-  width:90%;
-  text-align: center;
-  vertical-align: middle;
-  margin:auto;
-  border-radius: 1rem;
-  border:solid white 5px;
-  background-color: rgba(255, 255, 255, 0);
-  display: block;
-
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+.dy-content {
+    width: 90%;
+    margin:auto;
 }
 
-input:not([type=radio]), select{
-  text-align: left;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-  padding-left: 1rem;
+@media screen and (min-width: 640px) {
+    .dy-content {
+        width: 50%;
+    }
 }
 
-input:not([type=radio]){
-  color:white;
+.dy-content * {
+    font-size: 1rem;
+    margin-top: .5rem;
 }
 
-input::placeholder{
-  color:rgba(255, 255, 255, 0.5);
-  font-style: italic;
+a {
+    text-decoration: none;
 }
 
-.important, select, .radio-group input[type=radio]:checked + label{
-  background-color: white;
-  color:orange;
-  font-weight: 400;
-}
-select option{
-  color:black;
-}
-
-.input-select input{
-  width:80%;
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
-  margin: 0px;
-  display: inline-block;
-  margin-right: 0px;
+/*Buttons*/
+.dy-button-normal, .dy-button-strong{
+    border: solid .2rem white;
+    border-radius: .7rem;
+    line-height: 2rem;
+    vertical-align: middle;
+    text-align: center;
 }
 
-.input-select select{
-  width:20%;
-  display: inline-block;
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
-  margin: -10px;
-  padding-left: 0px;
-}
-.input-select, .radio-group{
-  width:90%;
-  margin:auto;
-  padding: 0;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+.dy-button-strong{
+    background-color: white;
+    color: orange;
 }
 
-.radio-group input[type=radio]{
-  font-size: 1rem;
-  display: none;
+/*Inputs*/
+
+input[type="text"], input[type="number"], input[type="password"], input[type="email"], select{
+    display: block;
+    border: solid .2rem white;
+    padding-left: .5rem;
+    border-radius: .7rem;
+    line-height: 2rem;
+    height: 2.4rem;
+    width: 100%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0)
 }
 
-.radio-group label{
-  width:calc(50% - (2 * 5px) - (2 * .5rem));
-  margin:0px;
-  display: inline-block;
-  border-radius: 0px;
-  padding-left: .5rem;
-  padding-right: .5rem;
-  margin-left: -10px;
+input[type="text"]::placeholder, input[type="number"]::placeholder, input[type="password"]::placeholder, input[type="email"]::placeholder{
+    color: rgba(255, 255, 255, .5);
+    font-style: italic;
 }
 
-.radio-group label:first-of-type{
-  border-top-left-radius: 1rem;
-  border-bottom-left-radius: 1rem;
-  margin-left: 0px;
+select > option{
+    color: black;
 }
 
-.radio-group label:last-of-type{
-  border-top-right-radius: 1rem;
-  border-bottom-right-radius: 1rem;
-  margin-right: 0px
+.dy-input-select {
+    border: solid white .2em;
+    border-radius: .7em;
+}
+
+.dy-input-select > *{
+    margin:0;
+    border:none !important;
+    display: inline-block !important;
+}
+
+.dy-input-select > input{
+    width:calc(75% - .5rem);
+}
+
+.dy-input-select > select {
+    width:calc(25% + .14rem);
+    border-radius: 0;
+    background-color: white;
+    color:orange;
+}
+
+.dy-radio-group input[type="radio"]{
+    display: none;
+}
+
+.dy-radio-group label{
+    margin:0;
+    border: solid white .2rem;
+    display: inline-block;
+    line-height: 2rem;
+    height: 2rem;
+    vertical-align: middle;
+    text-align: center;
+    width:calc(50% - .4rem);
+}
+
+.dy-radio-group label:first-of-type{
+    border-radius: .7rem 0 0 .7rem;
+}
+
+.dy-radio-group label:last-of-type{
+    border-radius: 0 .7rem .7rem 0;
+    margin-left: -.4rem;
+}
+
+.dy-radio-group input[type="radio"]:checked + label{
+    background-color: white;
+    color:orange;
+}
+
+/*Headings*/
+.dy-content h1{
+    font-size: 2rem;
+    font-weight: normal;
+    text-align: center;
+}
+
+.dy-content h2{
+    font-size: 1.8rem;
+    font-weight: normal;
+}
+.dy-content h3{
+    font-size: 1.6rem;
+    font-weight: normal;
+}
+.dy-content h4{
+    font-size: 1.4rem;
+    font-weight: normal;
+}
+
+/*Images*/
+img{
+    width:100%;
 }
