@@ -22,3 +22,7 @@ Route::get('/huser', function () {
 Route::get('/example', function(){
     return view('example');
 });
+
+Route::get('/drink', function(){
+    return view('drink/select');
+});
