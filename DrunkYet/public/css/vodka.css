@@ -1,4 +1,4 @@
-/*Vodka.css version 0.2*/
+/*Vodka.css version 0.2.1*/
 
 :root{
     --top-color:#f1c40f;
@@ -146,4 +146,10 @@ select > option{
 /*Images*/
 img{
     width:100%;
+}
+
+/*Positionnig*/
+
+.dy-space-1{
+    height: 1rem;
 }

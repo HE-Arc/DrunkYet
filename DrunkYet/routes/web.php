@@ -12,7 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('home/unlogged');
+});
+
+Route::get('/huser', function () {
+    return view('home/logged');
 });
 
 Route::get('/example', function(){
