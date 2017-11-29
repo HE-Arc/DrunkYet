@@ -14,11 +14,11 @@ class RegistrationController extends Controller
     {
         $this->validate(request(),[
 
-            'name'  =>  'required',
+            'name'  =>  'required|min:2|string',
             'email'  =>  'required|email|unique:users',
-            'password'  =>  'required',
-            'weight' => 'required',
-            'birth' => 'required'
+            'password'  =>  'required|min:6',
+            'weight' => 'required|integer|min:10',
+            'birth' => 'required|date|before:today'
         ]);
 
         $user = User::create(request(['name', 'email', 'birth', 'password', 'birth']));
