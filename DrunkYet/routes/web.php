@@ -12,11 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('home/unlogged');
+    return view('home.unlogged');
 });
 
-Route::get('/huser', function () {
-    return view('home/logged');
+
+Route::get('/user', function () {
+    return view('home.logged');
 });
 
 Route::get('/example', function(){
@@ -24,5 +25,8 @@ Route::get('/example', function(){
 });
 
 Route::get('/drink', function(){
-    return view('drink/select');
+    return view('drink.select');
 });
+
+Route::get('/register','RegistrationController@create');
+Route::post('/register','RegistrationController@store');
