@@ -25,8 +25,8 @@ class CreateDrinksTable extends Migration
         Schema::create('drink_user', function (Blueprint $table) {
             $table->integer('drink_id');
             $table->integer('user_id');
-            $table->float('degree');
-            $table->integer('quantity');
+            $table->float('degree')->nullable();
+            $table->integer('quantity')->nullable();
             $table->primary(['drink_id','user_id']);
         });
     }
