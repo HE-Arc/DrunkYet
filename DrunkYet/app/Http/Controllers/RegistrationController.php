@@ -29,6 +29,9 @@ class RegistrationController extends Controller
             'birth' => request('birth'),
             'gender' => request('gender')
         ]);
+
+        session()->flash('message','Merci d\'avoir créé un compte sur DrunkYet');
+
         auth()->login($user);
 
         return redirect('/user');

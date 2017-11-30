@@ -222,3 +222,17 @@ img{
     height: 1.5rem;
     width: 1.5rem;
 }
+
+/*Ajout pahud*/
+#flash_message{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10;
+    border: solid .2rem white;
+    background-color: white;
+    color: orange;
+    border-radius: .7rem;
+    vertical-align: middle;
+    text-align: center;
+}

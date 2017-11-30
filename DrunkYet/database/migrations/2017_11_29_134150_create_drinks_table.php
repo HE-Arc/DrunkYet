@@ -27,6 +27,7 @@ class CreateDrinksTable extends Migration
             $table->integer('user_id');
             $table->float('degree')->nullable();
             $table->integer('quantity')->nullable();
+            $table->dateTime('drinking_time');
             $table->primary(['drink_id','user_id']);
         });
     }
