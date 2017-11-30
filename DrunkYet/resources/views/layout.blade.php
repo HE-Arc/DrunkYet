@@ -4,10 +4,12 @@
   <meta name="viewport" content="width=device-width, user-scalable=no">
   <link rel="icon" type="image/png" href="fav_64.png" />
   <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/vodka.css') }}" />
+  <script src="{{ URL::asset('js/vodka.js') }}"></script>
 </head>
 <body>
-  <div class="dy-content">
+  <div id="dy-content">
     @yield('content')
   </div>
+  @include('flash_message')
 </body>
 </html>
