@@ -1,4 +1,4 @@
-/*Vodka.css version 0.3*/
+/*Vodka.css version 0.3.1*/
 
 :root{
     --top-color:#f1c40f;
@@ -36,6 +36,9 @@ a {
 }
 
 /*Buttons*/
+button{
+    width: 100%;
+}
 .dy-button-normal, .dy-button-strong{
     border: solid .2rem white;
     border-radius: .7rem;
@@ -51,7 +54,7 @@ a {
 
 /*Inputs*/
 
-input[type="text"], input[type="number"], input[type="password"], input[type="email"], select{
+input[type="text"], input[type="number"], input[type="password"], input[type="email"], input[type="date"], select{
     display: block;
     border: solid .2rem white;
     padding-left: .5rem;
@@ -63,9 +66,17 @@ input[type="text"], input[type="number"], input[type="password"], input[type="em
     background-color: rgba(0, 0, 0, 0)
 }
 
-input[type="text"]::placeholder, input[type="number"]::placeholder, input[type="password"]::placeholder, input[type="email"]::placeholder{
+input[type="text"]::placeholder,
+input[type="number"]::placeholder,
+input[type="password"]::placeholder,
+input[type="email"]::placeholder,
+input[type="date"]::placeholder{
     color: rgba(255, 255, 255, .5);
     font-style: italic;
+}
+
+label{
+    display: inline-block;
 }
 
 select > option{

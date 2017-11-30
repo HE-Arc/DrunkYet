@@ -16,7 +16,7 @@
     </div>
 
     <label for=birth"">Birth date :</label>
-    <input type="date" id="birth" name="birth" required/></br>
+    <input type="date" id="birth" name="birth" required/>
 
     <label for=weight"">Weight :</label>
     <input type="number" id="weight" name="weight" required/>
