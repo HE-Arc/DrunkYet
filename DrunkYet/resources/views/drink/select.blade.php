@@ -8,9 +8,7 @@
         <span class="dy-element-main">Vodka</span>
         <div class="dy-element-right">
             <span class="dy-element-second">40° 2dl</span>
-            <span class="dy-button-strong dy-element-action">
-                &rsaquo;
-            </span>
+            <span class="dy-button-strong dy-element-action">&rsaquo;</span>
         </div>
     </div>
     <div class="dy-list-element">

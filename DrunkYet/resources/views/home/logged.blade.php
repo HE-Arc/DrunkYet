@@ -5,5 +5,5 @@
     <h1>Connecté en tant que {{Auth::user()->name}}</h1>
 @endif
 
-<a href="/"><div class="dy-button-strong">Ajouter une consommation</div></a>
+<a href="/drink"><div class="dy-button-strong">Ajouter une consommation</div></a>
 @endsection

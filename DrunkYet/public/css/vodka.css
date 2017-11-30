@@ -188,7 +188,7 @@ img{
     border-bottom: solid .1em white;
     line-height: 2rem;
     vertical-align: middle;
-    margin:0;
+    margin:0 !important;
     padding-top: .2rem;
     padding-bottom: .2rem;
 }
@@ -201,7 +201,7 @@ img{
 }
 
 .dy-element-right{
-    margin:0;
+    margin: 0;
     float: right;
 }
 
@@ -216,8 +216,9 @@ img{
 
 .dy-element-action{
     display: inline-block;
-    border:none;
+    border: none;
     vertical-align: middle;
+    margin-bottom: .25rem;
     line-height: 1.5rem;
     height: 1.5rem;
     width: 1.5rem;
