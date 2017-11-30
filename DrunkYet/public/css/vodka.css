@@ -1,4 +1,4 @@
-/*Vodka.css version 0.3.1*/
+/*Vodka.css version 0.3.2*/
 
 :root{
     --top-color:#f1c40f;
@@ -15,18 +15,18 @@ html, body {
     font-size: 20px;
 }
 
-.dy-content {
+#dy-content {
     width: 90%;
     margin:auto;
 }
 
 @media screen and (min-width: 640px) {
-    .dy-content {
+    #dy-content {
         width: 50%;
     }
 }
 
-.dy-content * {
+#dy-content * {
     font-size: 1rem;
     margin-top: .5rem;
 }
@@ -136,37 +136,37 @@ select > option{
 
 /*Headings*/
 
-.dy-content h1{
+#dy-content h1{
     font-size: 1.3rem;
     font-weight: normal;
     text-align: center;
 }
 
-.dy-content h2{
+#dy-content h2{
     font-size: 1.2rem;
     font-weight: normal;
 }
-.dy-content h3{
+#dy-content h3{
     font-size: 1.1rem;
     font-weight: normal;
 }
-.dy-content h4{
+#dy-content h4{
     font-size: 1rem;
     font-weight: normal;
 }
 
 @media screen and (min-width: 640px) {
-    .dy-content h1{
+    #dy-content h1{
         font-size: 2rem;
     }
 
-    .dy-content h2{
+    #dy-content h2{
         font-size: 1.8rem;
     }
-    .dy-content h3{
+    #dy-content h3{
         font-size: 1.6rem;
     }
-    .dy-content h4{
+    #dy-content h4{
         font-size: 1.4rem;
     }
 }
@@ -223,16 +223,25 @@ img{
     width: 1.5rem;
 }
 
-/*Ajout pahud*/
-#flash_message{
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    z-index: 10;
-    border: solid .2rem white;
+/*Notify*/
+
+#dy-notify {
+    position: fixed;
+    visibility: hidden;
+    left:15%;
+    top:30%;
+    width: 70%;
+    margin:auto;
     background-color: white;
-    color: orange;
-    border-radius: .7rem;
-    vertical-align: middle;
+    padding: .5em;
     text-align: center;
+    border-radius: 1em;
+    color:orange;
+}
+
+@media screen and (min-width: 640px) {
+    #dy-notify {
+        left: 30%;
+        width: 40%;
+    }
 }
