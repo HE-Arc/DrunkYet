@@ -90,7 +90,7 @@ select > option{
 }
 
 .dy-input-select > *{
-    margin:0;
+    margin:0 !important;
     border:none !important;
     display: inline-block !important;
 }
