@@ -33,6 +33,7 @@ html, body {
 
 a {
     text-decoration: none;
+    color: inherit;
 }
 
 /*Buttons*/
@@ -245,4 +246,16 @@ img{
         left: 30%;
         width: 40%;
     }
+}
+
+/*Special*/
+
+/*Alcohol Level*/
+
+#AlcoholLevel{
+    text-align: center;
+}
+
+#AlcoholLevel > span {
+    font-size: 4rem;
 }

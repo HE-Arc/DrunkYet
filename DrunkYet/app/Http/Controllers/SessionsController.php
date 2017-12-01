@@ -25,7 +25,7 @@ class SessionsController extends Controller
             ]);
         }
 
-        return redirect('/user');
+        return redirect('/');
     }
 
     public function destroy()

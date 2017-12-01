@@ -3,7 +3,7 @@
 @section('content')
 <form method="POST" action="/login">
     {{ csrf_field() }}
-
+    <h1>Connexion</h1>
     <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
         <label for="email">Adresse e-mail:</label>
         <input id="email" type="email" name="email" value="{{ old('email') }}" required autofocus>
