@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Mail\Welcome;
 
 class RegistrationController extends Controller
 {
@@ -33,6 +34,8 @@ class RegistrationController extends Controller
         session()->flash('message','Merci d\'avoir créé un compte sur DrunkYet');
 
         auth()->login($user);
+
+        \Mail::to($user)->send(new Welcome($user));
 
         return redirect('/');
     }
