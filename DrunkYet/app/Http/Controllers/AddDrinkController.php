@@ -32,6 +32,8 @@ class AddDrinkController extends Controller
             'default_quantity' => $quantity
         ]);
 
-        return redirect('/');
+        session()->flash('message','Votre boisson a bien été ajouté.');
+
+        return redirect('/drink');
     }
 }
