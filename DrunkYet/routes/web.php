@@ -22,6 +22,10 @@ Route::get('/drink', 'DrinkController@select');
 
 Route::get('/register','RegistrationController@create');
 Route::post('/register','RegistrationController@store');
+Route::get('/edit','RegistrationController@edit');
+Route::patch('/edit','RegistrationController@update');
+Route::get('/pswd','PasswordController@edit');
+Route::patch('/pswd','PasswordController@update');
 
 
 Route::get('/login','SessionsController@create');
