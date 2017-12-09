@@ -16,6 +16,7 @@ Route::get('/', 'HomeController@home');
 
 Route::get('/drink', 'DrinkController@select');
 Route::get('/consume/{drink_id}', 'DrinkController@consume');
+Route::post('/consume', 'DrinkController@store');
 
 Route::get('/register','RegistrationController@create');
 Route::post('/register','RegistrationController@store');

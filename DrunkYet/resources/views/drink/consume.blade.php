@@ -16,6 +16,7 @@
             <option value="dl">dl</option>
         </select>
     </div>
+    <input type="hidden" value="{{ $drink->id }}" id="drink_id" name="drink_id"/>
     <button class="dy-button-strong" type="submit"/>Ajouter la consommation</button>
     <div class="dy-button-normal">Annuler</div>
 </form>
