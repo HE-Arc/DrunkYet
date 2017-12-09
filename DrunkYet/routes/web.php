@@ -14,11 +14,8 @@
 Route::get('/', 'HomeController@home');
 // Route::get('/home', 'HomeController@home');
 
-Route::get('/example', function(){
-    return view('example');
-});
-
 Route::get('/drink', 'DrinkController@select');
+Route::get('/consume/{drink_id}', 'DrinkController@consume');
 
 Route::get('/register','RegistrationController@create');
 Route::post('/register','RegistrationController@store');
