@@ -19,6 +19,11 @@ class DrinkController extends Controller
         return view('drink.consume',['drink'=>$drink]);
     }
 
+    public function search(){
+        $query = request('s');
+        return Drink::where('name','LIKE','%'.$query.'%')->get();
+    }
+
     public function store(){
         $quantity = request('quantity');
 

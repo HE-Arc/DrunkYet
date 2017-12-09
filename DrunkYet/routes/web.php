@@ -15,6 +15,7 @@ Route::get('/', 'HomeController@home');
 // Route::get('/home', 'HomeController@home');
 
 Route::get('/drink', 'DrinkController@select');
+Route::get('/search', 'DrinkController@search');
 Route::get('/consume/{drink_id}', 'DrinkController@consume');
 Route::post('/consume', 'DrinkController@store');
 
