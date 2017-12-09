@@ -230,6 +230,7 @@ img{
 #dy-notify {
     position: fixed;
     visibility: hidden;
+    display: none;
     left:15%;
     top:30%;
     width: 70%;

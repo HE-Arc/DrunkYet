@@ -8,7 +8,8 @@ document.addEventListener("DOMContentLoaded", function(event){
     notifyElement = document.getElementById("dy-notify");
     if(notifyElement != null){ // If there are notification
         notifyElement.style.visibility = "visible";
-        mainContainer.style.filter = "blur(7px)"
+        notifyElement.style.display = "block";
+        mainContainer.style.filter = "blur(7px)";
 
         setTimeout(notifyClose, 2000);
     }
@@ -16,5 +17,6 @@ document.addEventListener("DOMContentLoaded", function(event){
 
 function notifyClose(){
     notifyElement.style.visibility = "hidden";
-    mainContainer.style.filter = "none"
+    notifyElement.style.display = "none";
+    mainContainer.style.filter = "none";
 }
