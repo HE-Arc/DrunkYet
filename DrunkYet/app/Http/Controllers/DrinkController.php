@@ -21,7 +21,7 @@ class DrinkController extends Controller
 
     public function search(){
         $query = request('s');
-        return Drink::where('name','LIKE','%'.$query.'%')->get();
+        return Drink::where('name','LIKE','%'.$query.'%')->limit(10)->get();
     }
 
     public function store(){
