@@ -17,4 +17,5 @@
 <a href="/add">
     <div class="dy-button-normal"> Ajouter une boisson</div>
 </a>
+<a href="/"><div class="dy-button-normal">Annuler</div></a>
 @endsection

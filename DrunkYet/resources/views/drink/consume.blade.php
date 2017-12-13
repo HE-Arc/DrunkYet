@@ -18,6 +18,6 @@
     </div>
     <input type="hidden" value="{{ $drink->id }}" id="drink_id" name="drink_id"/>
     <button class="dy-button-strong" type="submit"/>Ajouter la consommation</button>
-    <div class="dy-button-normal">Annuler</div>
+    <a href="/drink"><div class="dy-button-normal">Annuler</div></a>
 </form>
 @endsection
