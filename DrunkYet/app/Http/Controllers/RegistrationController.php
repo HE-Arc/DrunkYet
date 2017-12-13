@@ -11,7 +11,8 @@ class RegistrationController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('guest');
+        $this->middleware('guest',['except'=>['edit','update']]);
+        $this->middleware('connected.guest');
     }
 
     public function create()
@@ -80,7 +81,7 @@ class RegistrationController extends Controller
 
     private function incrementEmail()
     {
-        return User::where('name','invité')->count();
+        return User::all()->pluck('id')->last()+1;
     }
 
     public function createGuest()

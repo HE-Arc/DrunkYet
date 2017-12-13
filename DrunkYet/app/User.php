@@ -65,6 +65,9 @@ class User extends Authenticatable
             $counter++;
             $average += $weight;
         }
+        if ($counter == 0) {
+            return 50;
+        }
         return $average/$counter;
     }
 }

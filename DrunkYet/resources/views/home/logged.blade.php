@@ -10,6 +10,8 @@
     <p>Tu ne peux pas conduire</p>
 @endif
 <a href="/drink"><div class="dy-button-strong">Ajouter une consommation</div></a>
-<a href="/edit"><div class="dy-button-normal">Editer les information du compte</div></a>
+@if($user->name!="invité")
+    <a href="/edit"><div class="dy-button-normal">Editer les informations du compte</div></a>
+@endif
 <a href="/logout"><div class="dy-button-normal">Se déconnecter</div></a>
 @endsection

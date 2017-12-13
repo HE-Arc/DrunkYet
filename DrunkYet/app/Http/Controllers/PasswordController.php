@@ -9,6 +9,13 @@ use App\User;
 
 class PasswordController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('connected.guest');
+    }
+
     public function edit(){
         return view('registration.editPswd');
     }

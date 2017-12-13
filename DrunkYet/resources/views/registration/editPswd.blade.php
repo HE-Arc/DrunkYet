@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-<h1>changement de mot de passe</h1>
+<h1>Changement de mot de passe</h1>
 <form action="/pswd" method="POST">
     {{ csrf_field() }}
     {{ method_field('PATCH') }}

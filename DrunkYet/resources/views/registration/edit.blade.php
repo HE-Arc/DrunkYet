@@ -25,7 +25,7 @@
     <label for=email"">Email :</label>
     <input type="email" id="email" name="email" value={{$user->email}} required/>
 
-    <a href="/pswd"><div class="dy-button-normal">changer mot de passe</div></a>
+    <a href="/pswd"><div class="dy-button-normal">Changer mot de passe</div></a>
 
     <button type="submit" name="button" class="dy-button-strong">Modifier</button>
     <a href="/"><div class="dy-button-normal">Annuler</div></a>
