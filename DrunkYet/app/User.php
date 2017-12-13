@@ -30,7 +30,7 @@ class User extends Authenticatable
 
     public function drinks()
     {
-        return $this->belongsToMany(Drink::class)->withPivot('quantity', 'degree', 'drinking_time')->orderBy('drinking_time');
+        return $this->belongsToMany(Drink::class)->withPivot('quantity', 'degree', 'drinking_time');
     }
 
     public function alcoholLevel(){
@@ -47,12 +47,24 @@ class User extends Authenticatable
 
             $timeSinceDrinking = Carbon::Now()->addHours(1)->diffInSeconds($drinking_time);
 
-            if($timeSinceDrinking > 1800 && $totalLevel==0){ // If we consume half hour before
+            if($timeSinceDrinking > 1800){ // If we consume half hour before
                 $levelSummit -= (($timeSinceDrinking - 1800) / 3600) * 0.15;
             }
 
             $totalLevel += ($levelSummit>0) ? $levelSummit : 0;
         }
         return $totalLevel;
+    }
+
+    public static function getAverageWeight()
+    {
+        $average = 0;
+        $counter = 0;
+        $weights = User::all()->pluck('weight')->toArray();
+        foreach ($weights as $weight) {
+            $counter++;
+            $average += $weight;
+        }
+        return $average/$counter;
     }
 }

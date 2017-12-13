@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Mail\Welcome;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 class RegistrationController extends Controller
 {
@@ -69,6 +70,28 @@ class RegistrationController extends Controller
 
         session()->flash('message','Informations mises a jour');
 
+        return redirect('/');
+    }
+
+    private function incrementEmail()
+    {
+        return User::where('name','invité')->count();
+    }
+
+    public function createGuest()
+    {
+        $user = User::create([
+            'name' => 'invité',
+            'email' => 'guest'.$this->incrementEmail().'@guest.com',
+            'password' => bcrypt('1234'),
+            'weight' => User::getAverageWeight(),
+            'birth' => Carbon::Now(),
+            'gender' => 'male'
+        ]);
+
+        session()->flash('message','Vous êts connecté en tant qu\'invité les valeurs peuvent ne pas être exacte');
+
+        auth()->login($user);
         return redirect('/');
     }
 }
