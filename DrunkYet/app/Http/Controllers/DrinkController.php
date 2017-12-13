@@ -43,7 +43,7 @@ class DrinkController extends Controller
         Auth::user()->drinks()->attach(request('drink_id'),[
             'quantity'=>$quantity,
             'degree' => request('degree'),
-            'drinking_time' => Carbon::Now()->addHours(1)
+            'drinking_time' => Carbon::Now('UTC')
         ]);
 
         return redirect('/');

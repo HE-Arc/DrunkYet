@@ -40,12 +40,12 @@ class User extends Authenticatable
 
             $quantity = $drink->pivot->quantity;
             $degree = $drink->pivot->degree;
-            $drinking_time = Carbon::parse($drink->pivot->drinking_time);
+            $drinking_time = Carbon::parse($drink->pivot->drinking_time, 'UTC');
             $absoptionSpeed = ($this->gender == 'male') ? 0.7 : 0.6;
 
             $levelSummit = ($quantity * ($degree / 100) * 0.8) / ($absoptionSpeed * $this->weight);
 
-            $timeSinceDrinking = Carbon::Now()->addHours(1)->diffInSeconds($drinking_time);
+            $timeSinceDrinking = Carbon::Now('UTC')->diffInSeconds($drinking_time);
 
             if($timeSinceDrinking > 1800){ // If we consume half hour before
                 $levelSummit -= (($timeSinceDrinking - 1800) / 3600) * 0.15;
