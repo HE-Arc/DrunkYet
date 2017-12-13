@@ -18,6 +18,9 @@
         </select>
     </div>
     <button class="dy-button-strong">Ajouter la boisson</button>
+    <a href="/drink">
+        <div class="dy-button-normal">Annuler</div>
+    </a>
 </form>
 @include('errors')
 @endsection

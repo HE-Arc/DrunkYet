@@ -14,7 +14,7 @@
         </div>
     </div>
 </div>
-<div class="dy-button-normal">
-    <a href="/add"> Ajouter une boisson</a>
-</div>
+<a href="/add">
+    <div class="dy-button-normal"> Ajouter une boisson</div>
+</a>
 @endsection
