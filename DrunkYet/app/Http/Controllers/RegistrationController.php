@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Mail\Welcome;
+use Illuminate\Support\Facades\Auth;
 
 class RegistrationController extends Controller
 {
@@ -42,6 +43,36 @@ class RegistrationController extends Controller
         auth()->login($user);
 
         \Mail::to($user)->send(new Welcome($user));
+
+        return redirect('/');
+    }
+
+    public function edit()
+    {
+        return view('registration.edit',["user" => Auth::user()]);
+    }
+
+    public function update()
+    {
+        $user = Auth::user();
+        $this->validate(request(),[
+
+            'name'  =>  'required|min:2|string',
+            'email'  =>  'required|email',
+            'weight' => 'required|integer|min:10',
+            'birth' => 'required|date|before:today'
+        ]);
+
+
+        User::where("id", $user->id)->update([
+            'name' => request('name'),
+            'email' => request('email'),
+            'weight' => request('weight'),
+            'birth' => request('birth'),
+            'gender' => request('gender')
+        ]);
+
+        session()->flash('message','Informations mises a jour');
 
         return redirect('/');
     }

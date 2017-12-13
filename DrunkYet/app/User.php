@@ -30,7 +30,7 @@ class User extends Authenticatable
 
     public function drinks()
     {
-        return $this->belongsToMany(Drink::class)->withPivot('quantity', 'degree', 'drinking_time');
+        return $this->belongsToMany(Drink::class)->withPivot('quantity', 'degree', 'drinking_time')->orderBy('drinking_time');
     }
 
     public function alcoholLevel(){
@@ -47,7 +47,7 @@ class User extends Authenticatable
 
             $timeSinceDrinking = Carbon::Now()->addHours(1)->diffInSeconds($drinking_time);
 
-            if($timeSinceDrinking > 1800){ // If we consume half hour before
+            if($timeSinceDrinking > 1800 && $totalLevel==0){ // If we consume half hour before
                 $levelSummit -= (($timeSinceDrinking - 1800) / 3600) * 0.15;
             }
 
