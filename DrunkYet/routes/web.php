@@ -11,8 +11,8 @@
 |
 */
 
+Route::get('/home', 'HomeController@home');
 Route::get('/', 'HomeController@home');
-// Route::get('/home', 'HomeController@home');
 
 Route::get('/example', function(){
     return view('example');
@@ -24,7 +24,7 @@ Route::get('/register','RegistrationController@create');
 Route::post('/register','RegistrationController@store');
 
 
-Route::get('/login','SessionsController@create');
+Route::get('/login','SessionsController@create')->name('login');
 Route::post('/login','SessionsController@store');
 Route::get('/logout','SessionsController@destroy');
 

@@ -17,6 +17,7 @@
             <option value="dl">dl</option>
         </select>
     </div>
-    <input class="dy-button-strong" type="submit" value="Ajouter la boisson">
+    <button class="dy-button-strong">Ajouter la boisson</button>
 </form>
+@include('errors')
 @endsection

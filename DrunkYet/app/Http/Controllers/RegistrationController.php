@@ -7,10 +7,16 @@ use App\Mail\Welcome;
 
 class RegistrationController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('guest');
+    }
+
     public function create()
     {
         return view('registration.create');
     }
+
     public function store()
     {
         $this->validate(request(),[
