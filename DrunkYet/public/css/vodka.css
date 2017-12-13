@@ -53,6 +53,10 @@ button{
     color: orange;
 }
 
+button:hover, .dy-button-normal:hover, .dy-button-strong:hover{
+    cursor: pointer;
+}
+
 /*Inputs*/
 
 input[type="text"], input[type="number"], input[type="password"], input[type="email"], input[type="date"], select{
