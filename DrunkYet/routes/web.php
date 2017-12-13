@@ -11,8 +11,8 @@
 |
 */
 
+Route::get('/home', 'HomeController@home');
 Route::get('/', 'HomeController@home');
-// Route::get('/home', 'HomeController@home');
 
 Route::get('/drink', 'DrinkController@select');
 Route::get('/search', 'DrinkController@search');
@@ -28,7 +28,7 @@ Route::get('/pswd','PasswordController@edit');
 Route::patch('/pswd','PasswordController@update');
 
 
-Route::get('/login','SessionsController@create');
+Route::get('/login','SessionsController@create')->name('login');
 Route::post('/login','SessionsController@store');
 Route::get('/logout','SessionsController@destroy');
 
