@@ -21,7 +21,7 @@ class AddDrinkController extends Controller
     {
         $this->validate(request(),[
             'name' => 'required|min:2|string',
-            'degree' => 'required|int|min:1|max:100',
+            'degree' => 'required|numeric|min:0|max:100',
             'quantity' => 'required|int|min:1|max:1000'
         ]);
 

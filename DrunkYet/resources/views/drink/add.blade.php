@@ -7,7 +7,7 @@
     <label for="name">Nom :</label>
     <input id="name" type="text" class="form-control" name="name" placeholder="Nom de la boisson" required>
     <label for="degree">Degrée d'alcool:</label>
-    <input id="degree" type="number" class="form-control" name="degree" placeholder="18°" required>
+    <input id="degree" type="number" step="0.1" class="form-control" name="degree" placeholder="18°" required>
     <label for="quantity">Contenance :</label>
     <div class="dy-input-select">
         <input id="quantity" type="number" class="form-control" name="quantity" placeholder="100" required>
