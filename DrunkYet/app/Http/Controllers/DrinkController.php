@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use App\Drink;
 use Carbon\Carbon;
 
@@ -25,7 +26,20 @@ class DrinkController extends Controller
 
     public function search(){
         $query = request('s');
-        return Drink::where('name','LIKE','%'.$query.'%')->limit(10)->get();
+        if($query != ""){
+            return Drink::where('name','LIKE','%'.$query.'%')->limit(10)->get();
+        }
+        else{
+            $consumed = Auth::user()->drinks()
+            ->select('drink_id','default_quantity','default_degree','name')
+            ->get()
+            ->groupBy('drink_id')->map(function($var,$key){
+                return $var->count();
+            })->sort()->reverse()->map(function($count, $id){
+                return Drink::find($id);
+            })->flatten();
+            return $consumed->union(Drink::where('name','LIKE','%')->limit(10-$consumed->count())->get());
+        }
     }
 
     public function store(){
