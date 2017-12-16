@@ -36,7 +36,7 @@ class User extends Authenticatable
     public function alcoholLevel(){
         //{{ $drink->name }} {{ $drink->pivot->quantity }} {{ $drink->pivot->degree }} {{ $drink->pivot->drinking_time }}
         $totalLevel = 0;
-        foreach($this->drinks as $drink){
+        foreach($this->drinks()->orderBy('drinking_time') as $drink){
 
             $quantity = $drink->pivot->quantity;
             $degree = $drink->pivot->degree;
@@ -47,7 +47,7 @@ class User extends Authenticatable
 
             $timeSinceDrinking = Carbon::Now('UTC')->diffInSeconds($drinking_time);
 
-            if($timeSinceDrinking > 1800){ // If we consume half hour before
+            if($timeSinceDrinking > 1800 && $totalLevel==0){ // If we consume half hour before
                 $levelSummit -= (($timeSinceDrinking - 1800) / 3600) * 0.15;
             }
 
