@@ -36,7 +36,7 @@ class User extends Authenticatable
     public function alcoholLevel(){
         //{{ $drink->name }} {{ $drink->pivot->quantity }} {{ $drink->pivot->degree }} {{ $drink->pivot->drinking_time }}
         $totalLevel = 0;
-        foreach($this->drinks()->orderBy('drinking_time') as $drink){
+        foreach($this->drinks()->orderBy('drinking_time')->get() as $drink){
 
             $quantity = $drink->pivot->quantity;
             $degree = $drink->pivot->degree;

@@ -43,6 +43,13 @@ class DrinkController extends Controller
     }
 
     public function store(){
+
+        $this->validate(request(),[
+            'drink_id' => 'required|int',
+            'degree' => 'required|numeric|min:0|max:100',
+            'quantity' => 'required|int|min:1|max:1000'
+        ]);
+
         $quantity = request('quantity');
 
         if(request('unit')=='cl')
