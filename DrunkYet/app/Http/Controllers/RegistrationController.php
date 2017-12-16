@@ -95,7 +95,7 @@ class RegistrationController extends Controller
             'gender' => 'male'
         ]);
 
-        session()->flash('message','Vous êts connecté en tant qu\'invité les valeurs peuvent ne pas être exacte');
+        session()->flash('message','Vous êtes connecté en tant qu\'invité les valeurs peuvent ne pas être exacte');
 
         auth()->login($user);
         return redirect('/');
