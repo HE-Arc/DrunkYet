@@ -14,8 +14,8 @@
         </div>
     </div>
 </div>
-<a href="/add">
+<a href="{{ URL::action('AddDrinkController@create') }}">
     <div class="dy-button-normal"> Ajouter une boisson</div>
 </a>
-<a href="/"><div class="dy-button-normal">Annuler</div></a>
+<a href="{{ URL::action('HomeController@home') }}"><div class="dy-button-normal">Annuler</div></a>
 @endsection

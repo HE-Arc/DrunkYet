@@ -2,7 +2,7 @@
 
 @section('content')
 <h1>Création de compte</h1>
-<form action="/register" method="POST">
+<form action="{{ URL::action('RegistrationController@store') }}" method="POST">
     {{ csrf_field() }}
 
     <label for="name">Nom :</label>

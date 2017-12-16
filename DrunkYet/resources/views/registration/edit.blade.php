@@ -2,7 +2,7 @@
 
 @section('content')
 <h1>Modification du compte</h1>
-<form action="/edit" method="POST">
+<form action="{{ URL::action('RegistrationController@update') }}" method="POST">
     {{ method_field('PATCH') }}
     {{ csrf_field() }}
 
@@ -25,10 +25,10 @@
     <label for=email"">Email :</label>
     <input type="email" id="email" name="email" value={{$user->email}} required/>
 
-    <a href="/pswd"><div class="dy-button-normal">Changer mot de passe</div></a>
+    <a href="{{ URL::action('PasswordController@edit') }}"><div class="dy-button-normal">Changer mot de passe</div></a>
 
     <button type="submit" name="button" class="dy-button-strong">Modifier</button>
-    <a href="/"><div class="dy-button-normal">Annuler</div></a>
+    <a href="{{ URL::action('HomeController@home') }}"><div class="dy-button-normal">Annuler</div></a>
 </form>
 @include('errors')
 @endsection

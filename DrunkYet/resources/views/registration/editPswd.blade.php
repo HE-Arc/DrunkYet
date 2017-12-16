@@ -2,7 +2,7 @@
 
 @section('content')
 <h1>Changement de mot de passe</h1>
-<form action="/pswd" method="POST">
+<form action="{{ URL::action('PasswordController@update') }}" method="POST">
     {{ csrf_field() }}
     {{ method_field('PATCH') }}
 
@@ -16,7 +16,7 @@
     <input type="password" id="newPassword_confirmation" name="newPassword_confirmation" value=""required/>
 
     <button type="submit" name="button" class="dy-button-strong">Changer</button>
-    <a href="/"><div class="dy-button-normal">Annuler</div></a>
+    <a href="{{ URL::action('RegistrationController@edit') }}"><div class="dy-button-normal">Annuler</div></a>
 </form>
 @include('errors')
 @endsection

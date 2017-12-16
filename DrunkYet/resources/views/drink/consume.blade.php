@@ -2,7 +2,7 @@
 
 @section('content')
 <h1>Ajouts d'une consommation</h1>
-<form method="POST" action="/consume">
+<form method="POST" action="{{ URL::action('DrinkController@store') }}">
     {{ csrf_field() }}
     <h2>{{ $drink->name }}</h2>
     <label for="degree">Degrée d'alcool:</label>
@@ -18,6 +18,6 @@
     </div>
     <input type="hidden" value="{{ $drink->id }}" id="drink_id" name="drink_id"/>
     <button class="dy-button-strong" type="submit"/>Ajouter la consommation</button>
-    <a href="/drink"><div class="dy-button-normal">Annuler</div></a>
+    <a href="{{ URL::action('DrinkController@select') }}"><div class="dy-button-normal">Annuler</div></a>
 </form>
 @endsection

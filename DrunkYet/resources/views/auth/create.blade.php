@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-<form method="POST" action="/login">
+<form method="POST" action="{{ URL::action('SessionsController@store') }}">
     {{ csrf_field() }}
     <h1>Connexion</h1>
     <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">

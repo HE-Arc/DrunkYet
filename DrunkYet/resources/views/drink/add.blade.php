@@ -2,7 +2,7 @@
 
 @section('content')
 <h1>Ajouts d'une boisson</h1>
-<form method="POST" action="/add">
+<form method="POST" action="{{URL::action('AddDrinkController@store')}}">
     {{ csrf_field() }}
     <label for="name">Nom :</label>
     <input id="name" type="text" class="form-control" name="name" placeholder="Nom de la boisson" required>
@@ -18,7 +18,7 @@
         </select>
     </div>
     <button class="dy-button-strong">Ajouter la boisson</button>
-    <a href="/drink">
+    <a href="{{URL::action('DrinkController@select')}}">
         <div class="dy-button-normal">Annuler</div>
     </a>
 </form>
