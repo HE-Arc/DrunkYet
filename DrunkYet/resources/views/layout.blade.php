@@ -2,9 +2,16 @@
 <head>
   <title>DrunkYet</title>
   <meta name="viewport" content="width=device-width, user-scalable=no">
-  <link rel="icon" type="image/png" href="/fav_64.png" />
-  <link rel="stylesheet" type="text/css" href='/css/vodka.css' />
-  <script src="/js/vodka.js"></script>
+
+  @if(env('APP_ENV') == 'production')
+  <link rel="icon" type="image/png" href="{{ URL::secureAsset('/fav_64.png')}}" />
+  <link rel="stylesheet" type="text/css" href="{{ URL::secureAsset('/css/vodka.css')}}" />
+  <script src="{{ URL::secureAsset('/js/vodka.js') }}"></script>
+  @else
+  <link rel="icon" type="image/png" href="{{ URL::asset('/fav_64.png')}}" />
+  <link rel="stylesheet" type="text/css" href="{{ URL::asset('/css/vodka.css')}}" />
+  <script src="{{ URL::asset('/js/vodka.js') }}"></script>
+  @endif
 </head>
 <body>
   <div id="dy-content">
