@@ -1,13 +1,13 @@
 @extends('layout')
 
 @section('content')
-<h1>Ajouts d'une consommation</h1>
+<h1>Ajout d'une consommation</h1>
 <form method="POST" action="{{ URL::action('DrinkController@store') }}">
     {{ csrf_field() }}
     <h2>{{ $drink->name }}</h2>
-    <label for="degree">Degrée d'alcool:</label>
+    <label for="degree">Degré d'alcool:</label>
     <input id="degree" type="number" min="0" max="100" step="0.1" class="form-control" name="degree" value="{{ $drink->default_degree }}" placeholder="18°" required>
-    <label for="quantity">Contenance :</label>
+    <label for="quantity">Contenance:</label>
     <div class="dy-input-select">
         <input id="quantity" type="number" class="form-control" name="quantity" value="{{ $drink->default_quantity }}" placeholder="100" required>
         <select name="unit">
