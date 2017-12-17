@@ -92,7 +92,7 @@ class RegistrationController extends Controller
             'password' => bcrypt('1234'),
             'weight' => User::getAverageWeight(),
             'birth' => Carbon::Now(),
-            'gender' => 'male'
+            'gender' => 'female'
         ]);
 
         session()->flash('message','Vous êtes connecté en tant qu\'invité les valeurs peuvent ne pas être exacte');
