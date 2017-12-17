@@ -25,4 +25,13 @@ class HomeController extends Controller
     public function unlogged(){
         return view("home.unlogged");
     }
+
+    public function alcoholLevel(){
+        if(Auth::check()){
+            return round(Auth::user()->alcoholLevel(),2);
+        }
+        else{
+            return 0;
+        }
+    }
 }

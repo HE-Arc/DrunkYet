@@ -13,6 +13,7 @@
 
 Route::get('/home', 'HomeController@home');
 Route::get('/', 'HomeController@home');
+Route::get('/alcoholLevel', 'HomeController@AlcoholLevel');
 
 Route::get('/drink', 'DrinkController@select');
 Route::get('/search', 'DrinkController@search');
