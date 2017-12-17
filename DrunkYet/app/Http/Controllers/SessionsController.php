@@ -18,7 +18,9 @@ class SessionsController extends Controller
 
     public function store()
     {
-        if(!auth()->attempt(request(['email', 'password'])))
+        $remember = request('remember') == 'on';
+
+        if(!auth()->attempt(request(['email', 'password']),$remember))
         {
             return back()->withErrors([
                 'message' => 'Vérifiez votre identification et réessayez.'

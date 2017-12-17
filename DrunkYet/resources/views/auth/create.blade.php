@@ -14,6 +14,14 @@
         <input id="password" type="password" class="form-control" name="password" required>
     </div>
 
+    <label>Se souvenir de moi: </label>
+    <div class="dy-radio-group">
+        <input checked id="on" type=radio name="remember"/>
+        <label for="on">Oui</label>
+        <input id="off" type=radio name="remember"/>
+        <label for="off">Non</label>
+    </div>
+
     <div class="form-group">
         <button type="submit" class="dy-button-strong">
             Connexion

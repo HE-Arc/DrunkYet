@@ -6,10 +6,10 @@
     {{ csrf_field() }}
     {{ method_field('PATCH') }}
 
-    <label for="password">Ancien Mot de passe :</label>
+    <label for="password">Ancien mot de passe :</label>
     <input type="password" id="password" name="password" value="" required/>
 
-    <label for="password">Nouveau Mot de passe :</label>
+    <label for="password">Nouveau mot de passe :</label>
     <input type="password" id="newPassword" name="newPassword" value="" required/>
 
     <label for="password_confirmation">Confirmation du mot de passe :</label>
