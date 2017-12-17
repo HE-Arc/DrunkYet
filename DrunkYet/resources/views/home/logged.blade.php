@@ -3,7 +3,7 @@
 @section('content')
 <h1>Bonjour {{$user->name}}</h1>
 <p>Votre taux d'alcoolémie est de</p>
-<div id="AlcoholLevel"><span>{{round($user->alcoholLevel(), 2)}}</span>‰</div>
+<div id="AlcoholLevel"><span id="AlcoholLevelSpan">{{round($user->alcoholLevel(), 2)}}</span>‰</div>
 @if($user->alcoholLevel() < 0.48)
     <p>Vous pouvez conduire.</p>
 @else

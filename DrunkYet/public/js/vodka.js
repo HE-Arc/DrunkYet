@@ -2,6 +2,8 @@ var mainContainer;
 var notifyElement;
 var searchInput;
 var searchResults;
+var alcoholLevel;
+var AlcoholLevelSpan;
 
 // When the DOM is ready
 document.addEventListener("DOMContentLoaded", function(event){
@@ -21,6 +23,21 @@ document.addEventListener("DOMContentLoaded", function(event){
     if(searchInput != null){
         searchInput.addEventListener("input", searchDrink);
         searchDrink();
+    }
+
+    alcoholLevel = document.getElementById("AlcoholLevel");
+    AlcoholLevelSpan = document.getElementById("AlcoholLevelSpan");
+    if(alcoholLevel != null){
+        setInterval(function(){
+            var request = new XMLHttpRequest();
+            request.onreadystatechange = function(){
+                if(request.readyState == 4 && request.status == 200){
+                    AlcoholLevelSpan.innerHTML = request.responseText;
+                }
+            }
+            request.open('get','/alcoholLevel',true);
+            request.send();
+        }, 60*1000); // 60 * 1000 ms = 1 minute
     }
 });
 
