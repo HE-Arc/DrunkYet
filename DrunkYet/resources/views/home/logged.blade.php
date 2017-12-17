@@ -1,13 +1,13 @@
 @extends('layout')
 
 @section('content')
-<h1>Salut {{$user->name}}</h1>
-<p>Ton taux d'alcoolémie est de</p>
+<h1>Bonjour {{$user->name}}</h1>
+<p>Votre taux d'alcoolémie est de</p>
 <div id="AlcoholLevel"><span>{{round($user->alcoholLevel(), 2)}}</span>‰</div>
 @if($user->alcoholLevel() < 0.48)
-    <p>Tu peux conduire.</p>
+    <p>Vous pouvez conduire.</p>
 @else
-    <p>Tu ne peux pas conduire</p>
+    <p>Vous ne pouvez pas conduire.</p>
 @endif
 <a href="{{URL::action('DrinkController@select')}}"><div class="dy-button-strong">Ajouter une consommation</div></a>
 @if($user->name!="invité")
