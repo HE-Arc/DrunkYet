@@ -2,6 +2,7 @@
 <head>
   <title>DrunkYet</title>
   <meta name="viewport" content="width=device-width, user-scalable=no">
+  <meta name="mobile-web-app-capable" content="yes">
 
   @if(env('APP_ENV') == 'production')
   <link rel="icon" type="image/png" href="{{ URL::secureAsset('/fav_64.png')}}" />
