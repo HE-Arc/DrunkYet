@@ -253,6 +253,18 @@ img{
     }
 }
 
+/*Errors*/
+#errors{
+    padding:1em;
+    background-color:#e74c3c;
+    border-radius: 1em;
+    list-style-type:none;
+}
+
+#errors li:first-of-type{
+    margin-top:0px !important;
+}
+
 /*Special*/
 
 /*Alcohol Level*/
