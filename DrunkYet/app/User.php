@@ -58,16 +58,6 @@ class User extends Authenticatable
 
     public static function getAverageWeight()
     {
-        $average = 0;
-        $counter = 0;
-        $weights = User::all()->pluck('weight')->toArray();
-        foreach ($weights as $weight) {
-            $counter++;
-            $average += $weight;
-        }
-        if ($counter == 0) {
-            return 50;
-        }
-        return $average/$counter;
+        return User::all()->pluck('weight')->avg();
     }
 }
