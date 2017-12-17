@@ -66,7 +66,7 @@ class DrinkController extends Controller
             'degree' => request('degree'),
             'drinking_time' => Carbon::Now('UTC')
         ]);
-
+        session()->flash('message','Votre consommation a été ajoutée.');
         return redirect('/');
     }
 }
