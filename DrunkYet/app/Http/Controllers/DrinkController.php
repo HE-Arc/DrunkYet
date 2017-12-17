@@ -64,7 +64,7 @@ class DrinkController extends Controller
         Auth::user()->drinks()->attach(request('drink_id'),[
             'quantity'=>$quantity,
             'degree' => request('degree'),
-            'drinking_time' => Carbon::Now('UTC')
+            'drinking_time' => Carbon::Now('UTC')->subMinutes(request('time'))
         ]);
         session()->flash('message','Votre consommation a été ajoutée.');
         return redirect('/');
